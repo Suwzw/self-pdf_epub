@@ -1549,7 +1549,7 @@ const PDFViewerApplication = {
 };
 exports.PDFViewerApplication = PDFViewerApplication;
 {
-  const HOSTED_VIEWER_ORIGINS = ["null","https://suwzw.github.io/self-pdf_epub/", "http://mozilla.github.io", "https://mozilla.github.io"];
+  const HOSTED_VIEWER_ORIGINS = ["null","https://796a49f4-ef12-46dd-81fb-9bd0db9e33e1-00-18pvsqcan4drr.pike.replit.dev","https://suwzw.github.io/self-pdf_epub", "http://mozilla.github.io", "https://mozilla.github.io"];
   var validateFileURL = function (file) {
     if (!file) {
       return;
