@@ -1549,7 +1549,7 @@ const PDFViewerApplication = {
 };
 exports.PDFViewerApplication = PDFViewerApplication;
 {
-  const HOSTED_VIEWER_ORIGINS = ["null","https://796a49f4-ef12-46dd-81fb-9bd0db9e33e1-00-18pvsqcan4drr.pike.replit.dev","https://suwzw.github.io/self-pdf_epub", "http://mozilla.github.io", "https://mozilla.github.io"];
+  const HOSTED_VIEWER_ORIGINS = ["null","https://796a49f4-ef12-46dd-81fb-9bd0db9e33e1-00-18pvsqcan4drr.pike.replit.dev/","https://suwzw.github.io/self-pdf_epub", "http://mozilla.github.io", "https://mozilla.github.io"];
   var validateFileURL = function (file) {
     if (!file) {
       return;
@@ -1559,10 +1559,10 @@ exports.PDFViewerApplication = PDFViewerApplication;
       if (HOSTED_VIEWER_ORIGINS.includes(viewerOrigin)) {
         return;
       }
-      // const fileOrigin = new URL(file, window.location.href).origin;
-      // if (fileOrigin !== viewerOrigin) {
-      //   throw new Error("file origin does not match viewer's");
-      // }
+      const fileOrigin = new URL(file, window.location.href).origin;
+      if (fileOrigin !== viewerOrigin) {
+        throw new Error("file origin does not match viewer's");
+      }
     } catch (ex) {
       PDFViewerApplication.l10n.get("loading_error").then(msg => {
         PDFViewerApplication._documentError(msg, {
